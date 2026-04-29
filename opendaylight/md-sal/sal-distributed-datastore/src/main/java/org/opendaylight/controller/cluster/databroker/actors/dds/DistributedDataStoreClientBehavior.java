@@ -8,18 +8,18 @@
 package org.opendaylight.controller.cluster.databroker.actors.dds;
 
 import java.util.stream.Stream;
+import org.eclipse.jdt.annotation.NonNullByDefault;
 import org.opendaylight.controller.cluster.access.client.ClientActorContext;
 import org.opendaylight.controller.cluster.datastore.utils.ActorUtils;
 import org.opendaylight.yangtools.yang.data.api.YangInstanceIdentifier;
 
 /**
  * {@link AbstractDataStoreClientBehavior} which performs module-based sharding.
- *
- * @author Robert Varga
  */
 final class DistributedDataStoreClientBehavior extends AbstractDataStoreClientBehavior {
     private final ModuleShardBackendResolver resolver;
 
+    @NonNullByDefault
     private DistributedDataStoreClientBehavior(final ClientActorContext context,
             final ModuleShardBackendResolver resolver) {
         super(context, resolver);
